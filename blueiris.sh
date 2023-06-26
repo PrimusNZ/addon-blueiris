@@ -1,5 +1,6 @@
 #!/bin/bash
 
+WINEPREFIX="/share/blueiris"
 PREFIX_DIR=${WINEPREFIX}
 BLUEIRIS_EXE="$PREFIX_DIR/drive_c/Program Files/Blue Iris ${BLUEIRIS_VERSION}/BlueIris.exe"
 BLUEIRIS_INSTALL_PATH="$PREFIX_DIR/drive_c/Program Files/Blue Iris ${BLUEIRIS_VERSION}"
