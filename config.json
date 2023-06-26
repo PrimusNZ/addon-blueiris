@@ -1,6 +1,6 @@
 {
   "name": "BlueIris",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "slug": "blueiris",
   "legacy": false,
   "init": false,
@@ -31,9 +31,9 @@
     "TZ": "Pacific/Auckland"
   },
   "schema": {
-    "BLUEIRIS_VERSION": "list(5,4)",
-    "RESOLUTION": "str?",
-    "TZ": "str?"
+    "BLUEIRIS_VERSION": "str",
+    "RESOLUTION": "str",
+    "TZ": "str"
   },
   "environment": {
     "BLUEIRIS_VERSION": "5",

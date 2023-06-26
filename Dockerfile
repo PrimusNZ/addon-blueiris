@@ -2,7 +2,7 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 ENV HOME /home/wineuser
-ENV WINEPREFIX /share/blueiris
+ENV WINEPREFIX /home/wineuser/prefix
 WORKDIR /home/wineuser
 
 ENV DEBIAN_FRONTEND noninteractive
