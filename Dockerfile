@@ -1,9 +1,9 @@
-FROM ubuntu:focal
+ARG BUILD_FROM
+FROM $BUILD_FROM
 
 ENV HOME /home/wineuser
-ENV WINEPREFIX /home/wineuser/prefix
+ENV WINEPREFIX /share/blueiris
 WORKDIR /home/wineuser
-VOLUME /home/wineuser/prefix
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LC_ALL C.UTF-8
@@ -24,7 +24,7 @@ RUN apt-get update && \
     dpkg --add-architecture i386 && \
     wget -nc https://dl.winehq.org/wine-builds/winehq.key && \
     apt-key add winehq.key && \
-    apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/ && \
+    apt-add-repository https://dl.winehq.org/wine-builds/debian/ && \
     apt-get update && apt-get -y install xvfb x11vnc xdotool wget tar supervisor winehq-devel net-tools fluxbox cabextract && \
     wget -O - https://github.com/novnc/noVNC/archive/v1.2.0.tar.gz | tar -xzv -C $HOME && mv $HOME/noVNC-1.2.0 $HOME/novnc && \
     wget -O - https://github.com/novnc/websockify/archive/v0.9.0.tar.gz | tar -xzv -C $HOME && mv $HOME/websockify-0.9.0 $HOME/novnc/utils/websockify && \

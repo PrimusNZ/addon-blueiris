@@ -11,15 +11,34 @@
     "amd64"
   ],
   "ports": {
-    "8080/tcp": 8080
+    "8080/tcp": 8080,
+    "81/tcp": 81,
+    "5900/tcp": 5900
   },
   "ports_description": {
-    "8080/tcp": "web interface"
+    "8080/tcp": "Web VNC interface",
+    "81/tcp": "BlueIris Web Interface",
+    "5900/tcp": "VNC Port"
   },
   "map": [
     "share:rw"
   ],
   "webui": "http://[HOST]:[PORT:8080]",
   "boot": "auto",
+  "options": {
+    "BLUEIRIS_VERSION": "5",
+    "RESOLUTION": "1024x768x24",
+    "TZ": "Pacific/Auckland"
+  },
+  "schema": {
+    "BLUEIRIS_VERSION": "list(5,4)",
+    "RESOLUTION": "str?",
+    "TZ": "str?"
+  },
+  "environment": {
+    "BLUEIRIS_VERSION": "5",
+    "RESOLUTION": "1024x768x24",
+    "TZ": "Pacific/Auckland"
+  },
   "image": "ghcr.io/primusnz/hassio-addons/{arch}-blueiris"
 }

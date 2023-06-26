@@ -12,20 +12,6 @@ This container runs:
 * WINE - to run Windows executables on linux
 * blueiris.exe - official Windows BlueIris
 
-```
-docker run -d \
-  --name="blueiris" \
-  --privileged \
-  --init \
-  --restart=always \
-  -e TZ=America/Los_Angeles \
-  -p 8080:8080 \
-  -p 5900:5900 \
-  -p 81:81 \
-  -v /path/to/data:/home/wineuser/prefix:rw \
-  --log-opt max-size=5m --log-opt max-file=2 \
-  jshridha/blueiris
-  ```
 * **NOTES:**
 
 * The container must be run in privileged mode for the first run to allow installation of the Visual C++ components. The privileged flag can be removed after the first run.
